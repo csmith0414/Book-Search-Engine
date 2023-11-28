@@ -9,10 +9,10 @@ export const QUERY = gql`
         savedBooks {
             bookId
             authors
+            description
+            title
             image
             link
-            title
-            description
         }
     }
 }`;
