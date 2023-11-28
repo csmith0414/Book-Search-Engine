@@ -13,10 +13,10 @@ import { removeBookId } from '../utils/localStorage';
 
 const SavedBooks = () => {
   const [Remove] = useMutation(REMOVE, {
-    refetchQueries: [QUERY, 'Me'],
+    refetchQueries: [QUERY, 'User'],
   });
   const { loading, data } = useQuery(QUERY);
-  const savedBooks = data?.me.savedBooks || [];
+  const savedBooks = data?.user.savedBooks || [];
   // use this to determine if `useEffect()` hook needs to run again
 
 
