@@ -7,16 +7,14 @@ import {
   Col
 } from 'react-bootstrap';
 import { REMOVE } from '../utils/mutations';
-import { QUERY } from '../utils/queries';
+import { GET_ME } from '../utils/queries';
 import Auth from '../utils/auth';
 import { removeBookId } from '../utils/localStorage';
 
 const SavedBooks = () => {
-  const [Remove] = useMutation(REMOVE, {
-    refetchQueries: [QUERY, 'User'],
-  });
-  const { loading, data } = useQuery(QUERY);
-  const savedBooks = data?.user.savedBooks || [];
+  const [Remove] = useMutation(REMOVE);
+  const { loading, data } = useQuery(GET_ME);
+  const userData = data?.me || [];
   // use this to determine if `useEffect()` hook needs to run again
 
 

@@ -1,8 +1,8 @@
 import gql from 'graphql-tag';
 
-export const QUERY = gql`
+export const GET_ME = gql`
 {
-    User {
+    me {
         _id
         username
         bookCount
